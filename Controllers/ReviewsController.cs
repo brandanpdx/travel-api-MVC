@@ -11,52 +11,55 @@ using System.Security.Claims;
 
 namespace TravelApiMVC.Controllers
 {
-  public class DestinationController : Controller
+  public class ReviewController : Controller
   {
     public IActionResult Index()
     {
-    var allDestinations = Destination.GetDestinations();
-    return View(allDestinations);
+    var allReviews = Review.GetReviews();
+    return View(allReviews);
     }
 
     [HttpPost]
-    public IActionResult Index(Destination destination)
+    public IActionResult Index(Review review)
     {
-      Destination.Post(destination);
+      Review.Post(review);
       return RedirectToAction("Index");
     }
 
     public IActionResult Details(int id)
     {
-      var destination = Destination.GetDetails(id);
-      return View(destination);
-    }
+      var review = Review.GetDetails(id);
+      return View(review);
+    } 
 
     public ActionResult Create()
     {
+      var allDestinations = Destination.GetDestinations();
+      ViewBag.DestinationId = new SelectList(allDestinations, "DestinationId", "City");
       return View();
-    }
+    } 
 
     public IActionResult Edit(int id)
     {
-      var destination = Destination.GetDetails(id);
-      return View(destination);
+      ViewBag.Destination = Destination.GetDetails(id);
+      var review = Review.GetDetails(id);
+      return View(review);
     }
 
     [HttpPost]
-    public IActionResult Details(int id, Destination destination)
+    public IActionResult Details(int id, Review review)
     {
-      destination.DestinationId = id;
-      Destination.Put(destination);
+      ViewBag.Destination = Destination.GetDetails(review.DestinationId);
+      review.ReviewId = id;
+      Review.Put(review);
       return RedirectToAction("Details", id);
     }
 
     public IActionResult Delete(int id)
     {
-      Destination.Delete(id);
+      Review.Delete(id);
       return RedirectToAction("Index");
     }
-
   }
 }
 

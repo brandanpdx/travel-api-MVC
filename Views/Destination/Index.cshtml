@@ -16,7 +16,9 @@
 {
   <ul>
     <li>Country: @destination.Country</li>
-    <li>City: @destination.City</li>
+    <li>City: @Html.ActionLink($"{destination.City}", "Details", new { id = destination.DestinationId })</li>
     <li>Rating: @destination.Rating</li>
   </ul>
 }
+
+ <button class="btn btn-outline-success"><p>@Html.ActionLink("➕Add a new destination", "Create", "Destination")</p></button>

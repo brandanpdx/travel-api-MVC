@@ -3,5 +3,25 @@
 }
 
 @using TravelApiMVC.Models;
-@model List<TravelApiMVC.Models.Destination>;
+@model TravelApiMVC.Models.Destination;
+
+<h1>Create Destination</h1>
+@using(Html.BeginForm("Index", "Destination", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.Country)
+        @Html.TextBoxFor(model => model.Country, new { @class = "form-control", required = "required"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.City)
+        @Html.TextBoxFor(model => model.City, new { @class = "form-control", required = "required"})
+    </div>
+         @Html.HiddenFor(model => model.Rating)
+    <input type="submit" value="➕Add" class="btn btn-outline-success my-2 my-sm-0">    
+
+    <button class="btn btn-outline-success">@Html.ActionLink("👀 See All", "Index", "Destination")</button>                                         
+    <p>@Html.ActionLink("Main", "Index", "Home")</p>
+}
+</div>
+
 

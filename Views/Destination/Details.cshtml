@@ -3,4 +3,28 @@
 }
 
 @using TravelApiMVC.Models;
-@model List<TravelApiMVC.Models.Destination>;
+@model TravelApiMVC.Models.Destination;
+
+  <h2>Destination Details</h2>
+<hr />
+<h3>@Html.DisplayFor(model => model.City)</h3>
+
+@if(@Model.Reviews.Count == 0)
+{
+  <p>This destination does not have any reviews yet.</p>
+}
+else
+{
+  <h4>Reviews for this destination:</h4>
+  <ul>
+  @foreach(var join in Model.Reviews)
+  {
+    <li>@join.ReviewText</li>
+    <li>@join.Rating</li>
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to destinations", "Index")</p>
+<p>@Html.ActionLink("Edit destinations", "Edit", new { id = Model.DestinationId })</p>
+<p>@Html.ActionLink("Delete destination", "Delete", new { id = Model.DestinationId })</p>

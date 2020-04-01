@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@using TravelApiMVC.Models;
+@model TravelApiMVC.Models.Review;
+
+<h2>Review Details</h2>
+<hr />
+<h3>@ViewBag.Destination.City</h3>
+<hr />
+
+<p>@Model.ReviewText</p>
+
+<p>@Html.ActionLink("Back to Reviews", "Index")</p>
+<p>@Html.ActionLink("Edit Reviews", "Edit", new { id = Model.ReviewId })</p>
+<p>@Html.ActionLink("Delete Review", "Delete", new { id = Model.ReviewId })</p>
