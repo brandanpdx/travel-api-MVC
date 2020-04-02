@@ -28,6 +28,8 @@ namespace TravelApiMVC.Controllers
 
     public IActionResult Details(int id)
     {
+      var allReviews = Review.GetReviews();
+      ViewBag.theseReviews = allReviews.Where(review => review.DestinationId == id).ToList();
       var destination = Destination.GetDetails(id);
       return View(destination);
     }
@@ -48,7 +50,7 @@ namespace TravelApiMVC.Controllers
     {
       destination.DestinationId = id;
       Destination.Put(destination);
-      return RedirectToAction("Details", id);
+      return RedirectToAction("Details", new {id = id});
     }
 
     public IActionResult Delete(int id)
