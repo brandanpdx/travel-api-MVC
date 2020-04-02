@@ -15,6 +15,7 @@ namespace TravelApiMVC.Controllers
   {
     public IActionResult Index()
     {
+    ViewBag.allDestinations = Destination.GetDestinations();
     var allReviews = Review.GetReviews();
     return View(allReviews);
     }
