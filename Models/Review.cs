@@ -11,7 +11,7 @@ namespace TravelApiMVC.Models
     public string ReviewText { get; set; }
     public string user_name { get; set; }
     public string Rating { get; set; }
-    // public Destination Destination { get; set; }
+
     public static List<Review> GetReviews()
     {
       var apiCallTask = ReviewApiHelper.ApiCall();

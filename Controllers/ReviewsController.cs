@@ -53,7 +53,7 @@ namespace TravelApiMVC.Controllers
       ViewBag.Destination = Destination.GetDetails(review.DestinationId);
       review.ReviewId = id;
       Review.Put(review);
-      return RedirectToAction("Details", id);
+      return RedirectToAction("Details", new{id=id});
     }
 
     public IActionResult Delete(int id)

@@ -18,9 +18,9 @@
   <ul>
     @{Destination dest = destinations.FirstOrDefault(x => x.DestinationId == review.DestinationId);}
     @dest.City
-    <li>Review Text: @review.ReviewText</li>
-    <li>User Name: @review.user_name</li>
-    <li>Rating: @review.Rating</li>
+    <li>📝Review Text: @review.ReviewText</li>
+    <li>👤 User Name: @review.user_name</li>
+    <li>📊Rating: @Html.ActionLink($"{review.Rating}", "Details", new { id = review.ReviewId })</li>
   </ul>
 }
 

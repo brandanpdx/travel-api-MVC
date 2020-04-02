@@ -12,6 +12,7 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ReviewId)
+    @Html.HiddenFor(model => model.DestinationId)
     <div class="form-group">
         @Html.LabelFor(model => model.ReviewText)
         @Html.TextBoxFor(model => model.ReviewText, new { @class = "form-control", required = "required"})

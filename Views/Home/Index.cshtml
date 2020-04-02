@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+<div class="bg-dark">
 <h1>Welcome to the Travel API!</h1>
 
 @if (User.Identity.IsAuthenticated)
@@ -24,3 +25,4 @@
 
   <p>@Html.ActionLink("See all destinations", "Index", "Destination")</p>
     <p>@Html.ActionLink("See all reviews", "Index", "Review")</p>
+</div>

@@ -48,7 +48,6 @@ namespace TravelApiMVC.Controllers
     [HttpPost]
     public IActionResult Details(int id, Destination destination)
     {
-      destination.DestinationId = id;
       Destination.Put(destination);
       return RedirectToAction("Details", new {id = id});
     }

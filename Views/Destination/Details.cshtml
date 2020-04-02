@@ -19,12 +19,13 @@ else
   <ul>
   @foreach(var join in ViewBag.theseReviews)
   {
-    <li>@join.ReviewText</li>
-    <li>@join.Rating</li>
+    <li>📝@join.ReviewText</li>
+    <li>📊@join.Rating</li>
+    <br>
   }
   </ul>
 }
 
-<p>@Html.ActionLink("Back to destinations", "Index")</p>
-<p>@Html.ActionLink("Edit destinations", "Edit", new { id = Model.DestinationId })</p>
-<p>@Html.ActionLink("Delete destination", "Delete", new { id = Model.DestinationId })</p>
+<button class="btn btn-secondary">@Html.ActionLink("🌍", "Index")</button>
+<button class="btn btn-secondary">@Html.ActionLink("✏️", "Edit", new { id = Model.DestinationId })</button>
+<button class="btn btn-danger">@Html.ActionLink("➖", "Delete", new { id = Model.DestinationId })</button>

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace TravelApiMVC.Models
 {
@@ -23,7 +24,6 @@ namespace TravelApiMVC.Models
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       List<Destination> destinationList = JsonConvert.DeserializeObject<List<Destination>>(jsonResponse.ToString());
-
       return destinationList;
     }
 

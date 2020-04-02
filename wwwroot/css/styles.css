@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h1 {
+    font-family: Patua One;
+    
+}
+li {
+    font-family: 'Patua One', cursive;
+}
+
+
+.bg-dark {
+    padding: 10px;
+}
