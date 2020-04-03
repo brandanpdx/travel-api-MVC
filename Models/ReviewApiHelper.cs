@@ -32,7 +32,7 @@ namespace TravelApiMVC.Models
 
     public static async Task Put(int id, string newreview)
     {
-      RestClient client = new RestClient("http//:localhost5000/api");
+      RestClient client = new RestClient("http://localhost:5000/api");
       RestRequest request = new RestRequest($"reviews/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json");
       request.AddJsonBody(newreview);
@@ -41,7 +41,7 @@ namespace TravelApiMVC.Models
 
     public static async Task Delete(int id)
     {
-      RestClient client = new RestClient("http//:localhost5000/api");
+      RestClient client = new RestClient("http://localhost:5000/api");
       RestRequest request = new RestRequest($"reviews/{id}", Method.DELETE);
       request.AddHeader("Content-Type", "application/json");
       var response = await client.ExecuteGetTaskAsync(request); 

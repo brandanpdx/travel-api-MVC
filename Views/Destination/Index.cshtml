@@ -14,11 +14,15 @@
 
 @foreach (Destination destination in Model)
 {
+  <div class="scroll">
+
   <ul>
-    <li>Country: @destination.Country</li>
-    <li>City: @Html.ActionLink($"{destination.City}", "Details", new { id = destination.DestinationId })</li>
-    <li>Rating: @destination.Rating</li>
+    <li>🌍Country: @destination.Country</li>
+    <li>🏙️City: @Html.ActionLink($"{destination.City}", "Details", new { id = destination.DestinationId })</li>
+    <li>📊Rating: @destination.Rating</li>
   </ul>
+
+  </div>
 }
 
- <button class="btn btn-outline-success"><p>@Html.ActionLink("➕Add a new destination", "Create", "Destination")</p></button>
+ <button class="btn btn-success">@Html.ActionLink("➕", "Create", "Destination")</button>
